@@ -4,8 +4,8 @@
 
 https://cryptography.io/en/latest/fernet/
 
-![main_page.png](file_encryptor%2Fassets%2Fmain_page.png)
+![main_page.png](file_encryptor/assets/main_page.png)
 
-![encrypt_page.png](file_encryptor%2Fassets%2Fencrypt_page.png)
+![encrypt_page.png](file_encryptor/assets/encrypt_page.png)
 
-![decrypt_page.png](file_encryptor%2Fassets%2Fdecrypt_page.png)
+![decrypt_page.png](file_encryptor/assets/decrypt_page.png)
