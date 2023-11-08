@@ -1,6 +1,7 @@
 # jetbrains
 .idea/
 .DS_Store
+__pycache__/  
 # backupfiles
 /temp
 
