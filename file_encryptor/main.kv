@@ -1,0 +1,89 @@
+#:include nav_drawer.kv
+#:include encrypt.kv
+#:include decrypt.kv
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+MDScreen:
+
+    MDTopAppBar:
+        title: "The Encryptor"
+        pos_hint: {"top": 1}
+        left_action_items:
+            [['menu', lambda x: nav_drawer.set_state("open")]]
+
+    MDNavigationLayout:
+
+        ScreenManager:
+            id: screen_manager
+            transition: NoTransition()
+
+            MDScreen:
+                name: "main_screen"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+
+                MDLabel:
+                    id: main_label
+                    text: "A simple encryption application to encrypt your files!"
+                    pos_hint: {"center_x": .5, "center_y": .85}
+                    halign: "center"
+                    font_size: "20dp"
+
+                MDLabel:
+                    text: "No Password"
+                    pos_hint: {"x": .15, "center_y": .75}
+
+                MDLabel:
+                    id: step1
+                    text: "1. First generate a keyfile and save to location with extension .key"
+                    pos_hint: {"x": .15, "center_y": .7}
+
+                MDLabel:
+                    id: step2
+                    text: "2. Click encrypt and select the keyfile, then the file to encrypt."
+                    pos_hint: {"x": .15, "center_y": .65}
+
+                MDLabel:
+                    id: step3
+                    text: "3. To decrypt, select keyfile first, then file to decrypt."
+                    pos_hint: {"x": .15, "center_y": .6}
+
+                MDLabel:
+                    text: "With a Password"
+                    pos_hint: {"x": .15, "center_y": .5}
+
+                MDLabel:
+                    id: pw_step1
+                    text: "1. Toggle Y and input a password, save salt to location with extension .key"
+                    pos_hint: {"x": .15, "center_y": .45}
+
+                MDLabel:
+                    id: pw_step2
+                    text: "2. Input password, select salt file, then the file to encrypt."
+                    pos_hint: {"x": .15, "center_y": .4}
+
+                MDLabel:
+                    id: pw_step3
+                    text: "3. To decrypt, input password, select salt file, then the file to decrypt."
+                    pos_hint: {"x": .15, "center_y": .35}
+
+                MDFillRoundFlatIconButton:
+                    id: start
+                    text: "Start..."
+                    icon: "ray-start-arrow"
+                    pos_hint: {"center_x": .5, "center_y": .15}
+                    size_hint: (None, None)
+                    on_release: screen_manager.current = "encrypt"
+
+            EncryptScreen:
+
+            DecryptScreen:
+
+        MDNavigationDrawer:
+            id: nav_drawer
+            radius: (0, 16, 16, 0)
+
+            ContentNavigationDrawer:
+                screen_manager: screen_manager
+                nav_drawer: nav_drawer

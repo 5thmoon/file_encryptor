@@ -1,0 +1,44 @@
+<DrawerClickableItem@MDNavigationDrawerItem>
+    focus_color: "#C4DBD4"
+    text_color: "#6DA694"
+    icon_color: "#6DA694"
+    ripple_color: "#c5bdd2"
+    selected_color: "#0c6c4d"
+
+<DrawerLabelItem@MDNavigationDrawerItem>
+    text_color: "#6DA694"
+    icon_color: "#6DA694"
+    focus_behavior: False
+    selected_color: "#4a4939"
+    _no_ripple_effect: True
+
+<ContentNavigationDrawer>:
+
+    MDNavigationDrawerMenu:
+
+        MDNavigationDrawerLabel:
+            text: "Menu"
+            text_color: "#C4DBD4"
+
+        MDNavigationDrawerDivider:
+
+        DrawerClickableItem:
+            icon: "home-account"
+            text: "Home"
+            on_press:
+                root.nav_drawer.set_state("close")
+                root.screen_manager.current = "main_screen"
+
+        DrawerClickableItem:
+            icon: "shield-key"
+            text: "Encrypt"
+            on_press:
+                root.nav_drawer.set_state("close")
+                root.screen_manager.current = "encrypt"
+
+        DrawerClickableItem:
+            icon: "lock-open-check"
+            text: "Decrypt"
+            on_press:
+                root.nav_drawer.set_state("close")
+                root.screen_manager.current = "decrypt"

@@ -1,0 +1,7 @@
+# jetbrains
+.idea/
+.DS_Store
+# backupfiles
+/temp
+
+

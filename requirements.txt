@@ -1,0 +1,17 @@
+-i https://pypi.org/simple
+certifi==2023.7.22; python_version >= '3.6'
+cffi==1.16.0; python_version >= '3.8'
+charset-normalizer==3.3.2; python_full_version >= '3.7.0'
+cryptography==41.0.5
+docutils==0.20.1; python_version >= '3.7'
+idna==3.4; python_version >= '3.5'
+kivy==2.2.1
+kivy-garden==0.1.5
+kivymd==1.1.1
+pillow==10.1.0
+plyer==2.1.0
+pycparser==2.21
+pygments==2.16.1; python_version >= '3.7'
+pyobjus==1.2.3
+requests==2.31.0; python_version >= '3.7'
+urllib3==2.0.7; python_version >= '3.7'
